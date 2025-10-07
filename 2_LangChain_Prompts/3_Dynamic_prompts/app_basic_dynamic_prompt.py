@@ -41,7 +41,7 @@ st.markdown("Set your research context in the sidebar. I will help you craft the
 with st.sidebar:
     st.header("⚙️ Research Context")
     AVAILABLE_MODELS = {
-        "Google Gemini Flash": "gemini-1.5-flash-latest",
+        "Google Gemini Flash": "gemini-2.5-flash",
         "Mistral-7B-Instruct": "mistralai/Mistral-7B-Instruct-v0.3",
         "Zephyr-7B-Alpha": "HuggingFaceH4/zephyr-7b-alpha",
     }
