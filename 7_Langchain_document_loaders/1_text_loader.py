@@ -1,13 +1,12 @@
 from langchain_community.document_loaders import TextLoader
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from dotenv import load_dotenv
 
 load_dotenv()
 
-model = ChatOpenAI()
-
+model = ChatGoogleGenerativeAI(model = 'gemini-2.5-flash' )
 prompt = PromptTemplate(
     template='Write a summary for the following poem - \n {poem}',
     input_variables=['poem']
@@ -15,7 +14,7 @@ prompt = PromptTemplate(
 
 parser = StrOutputParser()
 
-loader = TextLoader('cricket.txt', encoding='utf-8')
+loader = TextLoader('7_Langchain_document_loaders/cricket.txt', encoding='utf-8')
 
 docs = loader.load()
 
